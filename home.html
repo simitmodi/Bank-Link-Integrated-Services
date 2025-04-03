@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Link Integrated Services</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .theme-bg { background-color: #faf7ed; }
+        .theme-text { color: #0b1721; }
+        .century-gothic {
+            font-family: "Century Gothic", CenturyGothic, Avant Garde, sans-serif !important;
+        }
+        .dropbox-blue {
+            background-color: #2a477e;
+        }
+        .dropbox-blue:hover {
+            background-color: #233c64;
+        }
+        /* Pop-Up Animations */
+        .pop-up {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: scale(1);
+        }
+        .pop-up:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(42, 71, 126, 0.2);
+        }
+        /* Tooltip Styles */
+        .tooltip {
+            position: absolute;
+            width: max-content;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .tooltip.show {
+            opacity: 1;
+            transform: translateY(-10px);
+        }
+        /* Cursor Animation */
+        .custom-cursor {
+            position: fixed;
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(rgba(42, 71, 126, 0.3), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transition: all 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translate(-50%, -50%);
+            mix-blend-mode: difference;
+        }
+        /* Footer Links */
+        .footer-link {
+            position: relative;
+            transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .footer-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #0b1721;
+            bottom: -4px;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .footer-link:hover::after {
+            transform: scaleX(1);
+        }
+        /* User Metrics */
+        .user-metric {
+            font-size: 2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .user-metric:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="theme-bg min-h-screen flex flex-col century-gothic">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Header -->
+    <header class="py-6 px-4 sm:px-12">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="Logo.png" alt="Bank Link Logo" class="h-10 mr-3">
+                <span class="text-xl font-semibold theme-text">Bank Link Integrated Services</span>
+            </div>
+
+            <!-- Login Button -->
+            <a href="login.html" class="flex items-center space-x-2 theme-text hover:text-blue-600 transition-colors">
+                <span>Login</span>
+                <i class="fas fa-circle text-xs text-blue-600"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow p-4 sm:p-12">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <!-- Greeting -->
+            <h1 class="text-4xl font-bold text-center theme-text">Hi, user_name</h1>
+
+            <!-- Service Features -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Document Checklist -->
+                <div class="relative group">
+                    <a href="#" class="dropbox-blue text-white p-6 rounded-lg flex items-center justify-center pop-up">
+                        <h2 class="text-2xl font-semibold">Document Checklist</h2>
+                    </a>
+                    <!-- Tooltip -->
+                    <div class="tooltip absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white p-4 rounded-md shadow-md hidden group-hover:show">
+                        <p class="theme-text">
+                            Track mandatory documents for your application in real-time.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Appointment Scheduling -->
+                <div class="relative group">
+                    <a href="#" class="dropbox-blue text-white p-6 rounded-lg flex items-center justify-center pop-up">
+                        <h2 class="text-2xl font-semibold">Appointment Scheduling</h2>
+                    </a>
+                    <!-- Tooltip -->
+                    <div class="tooltip absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white p-4 rounded-md shadow-md hidden group-hover:show">
+                        <p class="theme-text">
+                            Book appointments with financial advisors 24/7.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Metrics -->
+            <div class="flex justify-center space-x-12">
+                <div class="text-center">
+                    <h3 class="user-metric theme-text">1,200</h3>
+                    <p class="text-sm text-gray-600">Live Users</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="user-metric theme-text">48,720</h3>
+                    <p class="text-sm text-gray-600">Total Users Served</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="user-metric theme-text">&#x20B9; 2,45,000</h3>
+                    <p class="text-sm text-gray-600">Transactions Processed</p>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <section class="space-y-6">
+                <h2 class="text-2xl font-semibold theme-text mb-4">Why Bank Link?</h2>
+                <p class="text-gray-700">
+                    We provide secure financial solutions tailored for Indian users, including:
+                </p>
+                <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <li><strong>Instant Processing:</strong> Loans and applications approved in 24 hours.</li>
+                    <li><strong>Rupee Support:</strong> All transactions in ₹ (INR).</li>
+                    <li><strong>Local Compliance:</strong> Adheres to RBI and Indian financial regulations.</li>
+                </ul>
+            </section>
+
+            <!-- Testimonial Section -->
+            <div class="bg-white rounded-lg p-6 theme-shadow">
+                <p class="text-gray-700 italic">
+                    "Bank Link made my loan process seamless. Transactions in ₹ were a game-changer!"  
+                    <span class="block mt-4 font-semibold">— Priya, Bangalore</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-6 px-4 sm:px-12">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8 text-sm text-gray-600">
+            <!-- Logo -->
+            <div>
+                <img src="Logo.png" alt="Bank Link Logo" class="h-12 mb-4 sm:mb-0">
+            </div>
+
+            <!-- Contact Info -->
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Contact Us:</p>
+                <a href="mailto:support@banklink.com" class="hover:underline">support@banklink.com</a>
+                <br>
+                <a href="tel:+91 80 1234 5678" class="hover:underline">+91 80 1234 5678</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Follow Us:</p>
+                <div class="flex space-x-4">
+                    <a href="#"><i class="fab fa-facebook-square text-2xl hover:text-blue-600"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square text-2xl hover:text-blue-400"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square text-2xl hover:text-pink-500"></i></a>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <nav class="flex flex-col md:flex-row gap-2 md:gap-8">
+                <a href="terms.html" class="footer-link hover:underline">Terms</a>
+                <a href="privacy.html" class="footer-link hover:underline">Privacy</a>
+                <a href="help.html" class="footer-link hover:underline">Help</a>
+                <a href="faq.html" class="footer-link hover:underline">FAQ</a>
+            </nav>
+        .century-gothic Font
+        .century-gothic Font
+            font-family: 'Century Gothic', sans-serif;
+        .century-gothic Font
+            font-family: 'Century Gothic', sans-serif;
+        .century-gothic Font
+        .century-gothic Font
+            font-family: 'Century Gothic', sans-serif
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Follow Us:</p>
+                <div class="flex space-x-4">
+                    <a href="#"><i class="fab fa-facebook-square text-2xl hover:text-blue-600"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square text-2xl hover:text-blue-400"></i></a>
+                    <a href="#"><i class="fab fa-instagram-square text-2xl hover:text-pink-500"></i></a>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <nav class="flex flex-col md:flex-row gap-2 md:gap-8">
+                <a href="terms.html" class="footer-link hover:underline">Terms</a>
+                <a href="privacy.html" class="footer-link hover:underline">Privacy</a>
+                <a href="help.html" class="footer-link hover:underline">Help</a>
+                <a href="faq.html" class="footer-link hover:underline">FAQ</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Smooth Cursor Animation Script -->
+    <script>
+        // Ultra-smooth cursor animation
+        const cursor = document.querySelector('.custom-cursor');
+        let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
+
+        const updateCursor = () => {
+            posX += (mouseX - posX) * 0.1;
+            posY += (mouseY - posY) * 0.1;
+            
+            cursor.style.left = `${posX}px`;
+            cursor.style.top = `${posY}px`;
+            cursor.style.transform = `translate(-50%, -50%) scale(${Math.sin(Date.now() * 0.002) * 0.1 + 0.9})`;
+            
+            requestAnimationFrame(updateCursor);
+        };
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.pageX;
+            mouseY = e.pageY;
+        });
+
+        updateCursor();
+    </script>
+
+    <!-- Fake User Metrics Script -->
+    <script>
+        // Simulate live user count (1,000–2,000)
+        setInterval(() => {
+            const liveUsers = document.querySelector('.user-metric:nth-child(1)');
+            liveUsers.textContent = Math.floor(Math.random() * 1000 + 1000).toLocaleString('en-IN');
+        }, 3000);
+
+        // Simulate total users (40,000–50,000)
+        setInterval(() => {
+            const totalUsers = document.querySelector('.user-metric:nth-child(2)');
+            totalUsers.textContent = Math.floor(Math.random() * 10000 + 40000).toLocaleString('en-IN');
+        }, 5000);
+
+        // Simulate transactions (₹ 2,00,000–2,50,000)
+        setInterval(() => {
+            const transactions = document.querySelector('.user-metric:nth-child(3)');
+            transactions.textContent = `&#x20B9; ${Math.floor(Math.random() * 50000 + 200000).toLocaleString('en-IN')}`;
+        }, 4000);
+    </script>
+</body>
+</html>

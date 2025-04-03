@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Link Sign Up</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .theme-bg { background-color: #faf7ed; }
+        .theme-text { color: #0b1721; }
+        .theme-shadow {
+            box-shadow: 0 4px 6px -1px rgba(74, 81, 94, 0.1),
+                        0 2px 4px -1px rgba(74, 81, 94, 0.06);
+        }
+        .dropbox-blue {
+            background-color: #2a477e;
+        }
+        .dropbox-blue:hover {
+            background-color: #233c64;
+        }
+        .century-gothic {
+            font-family: "Century Gothic", CenturyGothic, Avant Garde, sans-serif !important;
+        }
+        .error-text {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body class="theme-bg min-h-screen flex flex-col century-gothic">
+    <header class="py-8 px-4 sm:px-0">
+        <div class="max-w-xs mx-auto flex items-center justify-center sm:justify-start">
+            <img src="Logo.png" alt="Bank Link Integrated Services Logo" class="h-10">
+            <span class="ml-3 text-lg font-semibold theme-text">Bank Link Integrated Services</span>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-4">
+        <div class="w-full max-w-md bg-white rounded-lg theme-shadow p-8 sm:p-12">
+            <h1 class="text-2xl font-bold text-center mb-8 theme-text">Sign Up</h1>
+            
+            <form class="space-y-4" onsubmit="return validateForm()">
+                <!-- Full Name -->
+                <div>
+                    <label for="name" class="block text-sm font-medium theme-text mb-1">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        autocomplete="name" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+                <!-- Birthdate -->
+                <div>
+                    <label for="birthdate" class="block text-sm font-medium theme-text mb-1">Birthdate</label>
+                    <input 
+                        type="text" 
+                        id="birthdate" 
+                        autocomplete="bday" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                        placeholder="DD-MM-YYYY"
+                        pattern="\d{2}-\d{2}-\d{4}"
+                        required
+                    >
+                    <div id="birthdate-error" class="error-text hidden">Invalid date or future date selected</div>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-sm font-medium theme-text mb-1">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        autocomplete="email" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <label for="password" class="block text-sm font-medium theme-text mb-1">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        autocomplete="new-password" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                        placeholder="Create a password"
+                        required
+                    >
+                </div>
+
+                <!-- Confirm Password -->
+                <div>
+                    <label for="confirm-password" class="block text-sm font-medium theme-text mb-1">Confirm Password</label>
+                    <input 
+                        type="password" 
+                        id="confirm-password" 
+                        autocomplete="new-password" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                        placeholder="Confirm your password"
+                        required
+                    >
+                </div>
+                
+                <!-- Sign Up Button -->
+                <button 
+                    type="submit" 
+                    class="w-full dropbox-blue text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+                >
+                    Sign Up
+                </button>
+            </form>
+            
+            <!-- Google Sign Up -->
+            <div class="mt-6 text-center">
+                <p class="text-sm theme-text">or</p>
+                <button class="w-full mt-4 flex items-center justify-center gap-2 border border-gray-300 rounded-md py-2 px-4 text-gray-700 hover:bg-gray-50">
+                    <i class="fab fa-google text-red-500"></i>
+                    Sign up with Google
+                </button>
+            </div>
+            
+            <!-- Login Link -->
+            <div class="mt-8 text-center">
+                <p class="text-sm theme-text">Already have an account? <a href="login.html" class="text-blue-600 hover:underline">Sign in</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-100 py-6 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 text-sm text-gray-600">
+                <a href="terms.html" class="hover:underline">Terms</a>
+                <a href="privacy.html" class="hover:underline">Privacy</a>
+                <a href="help.html" class="hover:underline">Help</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function validateForm() {
+            const birthdateInput = document.getElementById('birthdate');
+            const birthdateError = document.getElementById('birthdate-error');
+            const datePattern = /^(\d{2})-(\d{2})-(\d{4})$/;
+            
+            // Reset error state
+            birthdateError.classList.add('hidden');
+            birthdateInput.classList.remove('border-red-500');
+
+            // Check format
+            if (!datePattern.test(birthdateInput.value)) {
+                showError('Invalid date format. Use DD-MM-YYYY.');
+                return false;
+            }
+
+            // Parse date
+            const [day, month, year] = birthdateInput.value.split('-').map(Number);
+            const birthdate = new Date(year, month - 1, day);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Compare dates without time
+
+            // Check validity and future date
+            if (
+                birthdate.getDate() !== day ||
+                birthdate.getMonth() + 1 !== month ||
+                birthdate.getFullYear() !== year ||
+                birthdate > today
+            ) {
+                showError('Invalid date or future date selected');
+                return false;
+            }
+
+            return true;
+        }
+
+        function showError(message) {
+            const birthdateInput = document.getElementById('birthdate');
+            const birthdateError = document.getElementById('birthdate-error');
+            
+            birthdateError.textContent = message;
+            birthdateError.classList.remove('hidden');
+            birthdateInput.classList.add('border-red-500');
+        }
+    </script>
+</body>
+</html>
