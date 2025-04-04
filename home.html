@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Link Integrated Services</title>
+    <link rel="icon" href="Logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Theme Styles */
+        .theme-bg { background-color: #faf7ed; }
+        .theme-text { color: #0b1721; }
+        .century-gothic {
+            font-family: "Century Gothic", CenturyGothic, Avant Garde, sans-serif !important;
+        }
+        .dropbox-blue {
+            background-color: #2a477e;
+        }
+        .dropbox-blue:hover {
+            background-color: #233c64;
+        }
+
+        /* Scroll Reveal */
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modals */
+        .modal {
+            transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+            pointer-events: none;
+        }
+        .modal.visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+            transform: translateY(20px);
+        }
+        .modal.visible .modal-content {
+            transform: translateY(0);
+        }
+        .close-btn {
+            transition: transform 0.2s ease;
+        }
+        .close-btn:hover {
+            transform: rotate(45deg);
+        }
+
+        /* Cursor */
+        .custom-cursor {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.2s ease, background 0.3s ease;
+            mix-blend-mode: normal;
+        }
+        .custom-cursor.active {
+            transform: scale(1.5);
+            background: radial-gradient(rgba(42, 71, 126, 0.5), transparent 70%);
+        }
+
+        /* Micro-Interactions */
+        .pop-up {
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        .pop-up:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(42, 71, 126, 0.3);
+        }
+        .user-metric:hover {
+            transform: scale(1.05) translateY(-2px);
+        }
+    </style>
+</head>
+<body class="theme-bg min-h-screen flex flex-col century-gothic loading">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Header -->
+    <header class="py-6 px-4 sm:px-12">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="Logo.png" alt="Bank Link Logo" class="h-12 mr-3">
+                <span class="text-xl font-semibold theme-text">Bank Link Integrated Services</span>
+            </div>
+            <a href="login.html" class="flex items-center space-x-2 theme-text hover:text-blue-600 transition-colors">
+                <span>Login</span>
+                <i class="fas fa-circle text-xs text-blue-600"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow p-4 sm:p-12">
+        <div class="max-w-4xl mx-auto space-y-12">
+            <!-- Greeting -->
+            <h1 class="text-4xl font-bold text-center theme-text section">Hi, user_name</h1>
+
+            <!-- Service Features -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 section">
+                <!-- Document Checklist -->
+                <div class="relative group">
+                    <a href="document-checklist.html" class="dropbox-blue text-white p-6 rounded-lg flex items-center justify-center pop-up document-checklist-btn">
+                        <h2 class="text-2xl font-semibold">Document Checklist</h2>
+                    </a>
+                    <!-- Tooltip -->
+                    <div class="tooltip absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white p-4 rounded-md shadow-md hidden group-hover:show">
+                        <p class="theme-text">
+                            Avoid multiple visits! Get your document list upfront.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Appointment Scheduling -->
+                <div class="relative group">
+                    <a href="appointment-scheduling.html" class="dropbox-blue text-white p-6 rounded-lg flex items-center justify-center pop-up appointment-btn">
+                        <h2 class="text-2xl font-semibold">Appointment Scheduling</h2>
+                    </a>
+                    <!-- Tooltip -->
+                    <div class="tooltip absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white p-4 rounded-md shadow-md hidden group-hover:show">
+                        <p class="theme-text">
+                            Book visits confidently with document readiness confirmation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Metrics -->
+            <div class="flex justify-center space-x-12 section">
+                <div class="text-center">
+                    <h3 class="user-metric theme-text">1,200</h3>
+                    <p class="text-sm text-gray-600">Live Users</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="user-metric theme-text">48,720</h3>
+                    <p class="text-sm text-gray-600">Users Avoided Multiple Visits</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="user-metric theme-text">&#x20B9; 2,45,000</h3>
+                    <p class="text-sm text-gray-600">Transactions Processed</p>
+                </div>
+            </div>
+
+            <!-- Why Bank Link -->
+            <section class="space-y-6 section">
+                <h2 class="text-2xl font-semibold theme-text mb-4">Why Bank Link?</h2>
+                <p class="text-gray-700">
+                    No more guessing games – we ensure you have all documents ready before visiting:
+                </p>
+                <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <li><strong>Document Checklists:</strong> Tailored requirements for every service.</li>
+                    <li><strong>Appointment Confirmation:</strong> Reserve slots only after document readiness.</li>
+                    <li><strong>24/7 Support:</strong> Update documents anytime, anywhere.</li>
+                </ul>
+            </section>
+
+            <!-- Testimonial -->
+            <div class="bg-white rounded-lg p-6 shadow-md section">
+                <p class="text-gray-700 italic">
+                    "I saved 2 trips to the bank by using the document checklist!"  
+                    <span class="block mt-4 font-semibold">— Ankit, Delhi</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <!-- Document Checklist Modal -->
+    <div id="documentModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="modal-content bg-white p-8 rounded-lg w-full max-w-md">
+            <button onclick="closeModal('documentModal')" class="close-btn absolute top-4 right-4 text-gray-600 hover:text-gray-900">
+                &times;
+            </button>
+            <h2 class="text-2xl font-semibold mb-4">Document Checklist</h2>
+            <p class="text-gray-700 mb-4">
+                Select your banking need to view required documents:
+            </p>
+            <select class="w-full px-4 py-2 border rounded mb-4">
+                <option>Loan Application</option>
+                <option>Account Opening</option>
+                <option>KYC Update</option>
+            </select>
+            <button class="dropbox-blue text-white py-2 px-4 rounded-lg">
+                Get Full Checklist
+            </button>
+        </div>
+    </div>
+
+    <!-- Appointment Modal -->
+    <div id="appointmentModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="modal-content bg-white p-8 rounded-lg w-full max-w-md">
+            <button onclick="closeModal('appointmentModal')" class="close-btn absolute top-4 right-4 text-gray-600 hover:text-gray-900">
+                &times;
+            </button>
+            <h2 class="text-2xl font-semibold mb-4">Appointment Scheduling</h2>
+            <div class="flex flex-col md:flex-row gap-4">
+                <input type="date" class="w-full px-4 py-2 border rounded mb-4 md:mb-0">
+                <select class="w-full px-4 py-2 border rounded">
+                    <option>Select Branch</option>
+                </select>
+            </div>
+            <button class="dropbox-blue text-white mt-4 py-2 px-4 rounded-lg">
+                Reserve Slot
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-6 px-4 sm:px-12">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8 text-sm text-gray-600">
+            <div>
+                <img src="Logo.png" alt="Bank Link Logo" class="h-24 mb-4 sm:mb-0">
+            </div>
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Contact Us:</p>
+                <a href="mailto:support@banklink.com" class="hover:underline">support@banklink.com</a>
+                <br>
+                <a href="tel:+91 80 1234 5678" class="hover:underline">+91 80 1234 5678</a>
+            </div>
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Follow Us:</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="social-icon hover:text-blue-600" aria-label="Facebook">
+                        <i class="fab fa-facebook-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-blue-400" aria-label="Twitter">
+                        <i class="fab fa-twitter-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-pink-500" aria-label="Instagram">
+                        <i class="fab fa-instagram-square text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <nav class="flex flex-col md:flex-row gap-2 md:gap-8">
+                <a href="terms.html" class="footer-link hover:underline">Terms</a>
+                <a href="privacy.html" class="footer-link hover:underline">Privacy</a>
+                <a href="help.html" class="footer-link hover:underline">Help</a>
+                <a href="faq.html" class="footer-link hover:underline">FAQ</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Smooth Cursor Animation -->
+    <script>
+        const cursor = document.querySelector('.custom-cursor');
+        let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
+
+        const updateCursor = () => {
+            posX += (mouseX - posX) * 0.08;
+            posY += (mouseY - posY) * 0.08;
+            
+            cursor.style.left = `${posX}px`;
+            cursor.style.top = `${posY}px`;
+            cursor.style.transform = `translate(-50%, -50%) scale(${Math.sin(Date.now() * 0.0015) * 0.1 + 0.9})`;
+            
+            requestAnimationFrame(updateCursor);
+        };
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.pageX;
+            mouseY = e.pageY;
+        });
+
+        updateCursor();
+
+        // Cursor Interactions
+        document.querySelectorAll('a, button').forEach(element => {
+            element.addEventListener('mouseover', () => {
+                cursor.classList.add('active');
+            });
+            element.addEventListener('mouseout', () => {
+                cursor.classList.remove('active');
+            });
+        });
+    </script>
+
+    <!-- Scroll Reveal -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll(".section");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach((section) => observer.observe(section));
+            document.body.classList.remove('loading');
+        });
+    </script>
+
+    <!-- Modal Functions -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add("visible");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove("visible");
+            document.body.style.overflow = "auto";
+        }
+
+        // Attach to buttons
+        document.querySelector('.document-checklist-btn').addEventListener('click', () => openModal('documentModal'));
+        document.querySelector('.appointment-btn').addEventListener('click', () => openModal('appointmentModal'));
+
+        // Smooth page transitions
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                document.body.classList.add('loading');
+                setTimeout(() => window.location.href = link.href, 300);
+                e.preventDefault();
+            });
+        });
+    </script>
+
+    <!-- Metrics Script -->
+    <script>
+        const liveUsers = document.querySelector('.user-metric:nth-child(1)');
+        const avoidedVisits = document.querySelector('.user-metric:nth-child(2)');
+        const transactions = document.querySelector('.user-metric:nth-child(3)');
+
+        function updateMetrics() {
+            liveUsers.textContent = Math.floor(Math.random() * 500 + 500);
+            avoidedVisits.textContent = Math.floor(Math.random() * 10000 + 40000);
+            transactions.textContent = `₹ ${Math.floor(Math.random() * 50000 + 200000).toLocaleString('en-IN')}`;
+        }
+
+        setInterval(updateMetrics, 3000);
+    </script>
+</body>
+</html>

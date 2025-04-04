@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Link Sign In</title>
+    <link rel="icon" href="Logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Theme Colors */
+        .theme-bg { background-color: #faf7ed; }
+        .theme-text { color: #0b1721; }
+        .theme-shadow {
+            box-shadow: 0 4px 6px -1px rgba(74, 81, 94, 0.1),
+                        0 2px 4px -1px rgba(74, 81, 94, 0.06);
+        }
+        /* Sign-In Button Color */
+        .dropbox-blue {
+            background-color: #2a477e;
+        }
+        .dropbox-blue:hover {
+            background-color: #233c64;
+        }
+        /* Century Gothic Font */
+        .century-gothic {
+            font-family: "Century Gothic", CenturyGothic, Avant Garde, sans-serif !important;
+        }
+        /* Error Message Styles */
+        .error-message {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background-color: #f8d7da;
+            color: #721c24;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-top: 1rem;
+            margin-bottom: -1.5rem; /* Offset form spacing */
+        }
+        .error-message.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📦</text></svg>">
+</head>
+<body class="theme-bg min-h-screen flex flex-col century-gothic">
+    <header class="py-8 px-4 sm:px-0">
+        <div class="max-w-xs mx-auto flex items-center justify-center sm:justify-start">
+            <img 
+                src="Logo.png" 
+                alt="Bank Link Integrated Services Logo" 
+                class="h-10"
+            >
+            <span class="ml-3 text-lg font-semibold theme-text">
+                Bank Link Integrated Services
+            </span>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-4">
+        <div class="w-full max-w-md bg-white rounded-lg theme-shadow p-8 sm:p-12">
+            <h1 class="text-2xl font-bold text-center mb-8 theme-text">Sign in</h1>
+            
+            <!-- Error Message -->
+            <div id="error" class="error-message text-center"></div>
+
+            <form class="space-y-4" id="loginForm">
+                <div>
+                    <label for="username" class="block text-sm font-medium theme-text mb-1">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        autocomplete="username" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                        placeholder="Enter your username"
+                    >
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-sm font-medium theme-text mb-1">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        autocomplete="current-password" 
+                        class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
+                        placeholder="Enter your password"
+                    >
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input 
+                            type="checkbox" 
+                            id="remember" 
+                            class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                        >
+                        <label for="remember" class="ml-2 block text-sm theme-text">Remember me</label>
+                    </div>
+                    <a href="forgot-password.html" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+                </div>
+                
+                <button 
+                    type="submit" 
+                    class="w-full dropbox-blue text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+                >
+                    Sign in
+                </button>
+            </form>
+            
+            <div class="mt-6 text-center">
+                <p class="text-sm theme-text">or</p>
+                <button class="w-full mt-4 flex items-center justify-center gap-2 border border-gray-300 rounded-md py-2 px-4 text-gray-700 hover:bg-gray-50">
+                    <i class="fab fa-google text-red-500"></i>
+                    Sign in with Google
+                </button>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <p class="text-sm theme-text">Don't have an account? <a href="Signup.html" class="text-blue-600 hover:underline">Sign up</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Copied from home page) -->
+    <footer class="bg-gray-100 py-6 px-4 sm:px-12">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8 text-sm text-gray-600">
+            <!-- Logo -->
+            <div>
+                <img src="Logo.png" alt="Bank Link Logo" class="h-24 mb-4 sm:mb-0">
+            </div>
+
+            <!-- Contact Info -->
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Contact Us:</p>
+                <a href="mailto:support@banklink.com" class="hover:underline">support@banklink.com</a>
+                <br>
+                <a href="tel:+91 80 1234 5678" class="hover:underline">+91 80 1234 5678</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Follow Us:</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="social-icon hover:text-blue-600" aria-label="Facebook">
+                        <i class="fab fa-facebook-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-blue-400" aria-label="Twitter">
+                        <i class="fab fa-twitter-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-pink-500" aria-label="Instagram">
+                        <i class="fab fa-instagram-square text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <nav class="flex flex-col md:flex-row gap-2 md:gap-8">
+                <a href="terms.html" class="footer-link hover:underline">Terms</a>
+                <a href="privacy.html" class="footer-link hover:underline">Privacy</a>
+                <a href="help.html" class="footer-link hover:underline">Help</a>
+                <a href="faq.html" class="footer-link hover:underline">FAQ</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- Authentication Logic -->
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorElement = document.getElementById('error');
+
+            // Admin Credentials
+            if (username === 'admin' && password === 'admin') {
+                window.location.href = 'home.html';
+            } else {
+                errorElement.textContent = 'Incorrect username or password';
+                errorElement.classList.add('show');
+                
+                // Shake animation on error
+                errorElement.style.animation = 'shake 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                
+                // Clear after 2 seconds
+                setTimeout(() => {
+                    errorElement.textContent = '';
+                    errorElement.classList.remove('show');
+                }, 2000);
+            }
+        });
+
+        // Shake Animation Keyframes
+        document.addEventListener('DOMContentLoaded', function() {
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+                    20%, 40%, 60%, 80% { transform: translateX(10px); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

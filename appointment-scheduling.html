@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Scheduling - Bank Link</title>
+    <link rel="icon" href="Logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .theme-bg { background-color: #faf7ed; }
+        .theme-text { color: #0b1721; }
+        .century-gothic {
+            font-family: "Century Gothic", CenturyGothic, Avant Garde, sans-serif !important;
+        }
+        .dropbox-blue {
+            background-color: #2a477e;
+        }
+        .dropbox-blue:hover {
+            background-color: #233c64;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(74, 81, 94, 0.1);
+        }
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+        .input-field:focus {
+            border-color: #2a477e;
+            outline: none;
+        }
+        .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+<body class="theme-bg min-h-screen flex flex-col century-gothic">
+    <header class="py-8 px-4 sm:px-0">
+        <div class="max-w-xs mx-auto flex items-center justify-center sm:justify-start">
+            <img src="Logo.png" alt="Bank Link Integrated Services Logo" class="h-10">
+            <span class="ml-3 text-lg font-semibold theme-text">Bank Link Integrated Services</span>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-4">
+        <div class="form-container bg-white p-8 sm:p-12 space-y-6">
+            <div class="flex items-center mb-8">
+                <img src="Logo.png" alt="Logo" class="h-12 mr-4">
+                <h1 class="text-3xl font-bold theme-text">Appointment Scheduling</h1>
+            </div>
+
+            <form class="space-y-4" id="appointmentForm">
+                <!-- Bank Preference -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label for="bank-preference" class="block text-sm font-medium theme-text mb-1">Bank Preference</label>
+                    <select 
+                        id="bank-preference" 
+                        class="input-field"
+                        required
+                    >
+                        <option value="">Select Bank</option>
+                        <option value="SBI">State Bank of India</option>
+                        <option value="HDFC">HDFC Bank</option>
+                        <option value="ICICI">ICICI Bank</option>
+                        <option value="AXIS">Axis Bank</option>
+                        <option value="BOI">Bank of India</option>
+                    </select>
+                </div>
+
+                <!-- Pincode -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label for="pincode" class="block text-sm font-medium theme-text mb-1">Pincode</label>
+                    <input 
+                        type="number" 
+                        id="pincode" 
+                        class="input-field"
+                        placeholder="Enter pincode"
+                        required
+                    >
+                </div>
+
+                <!-- Nearest Branch (Dynamic) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label for="nearest-branch" class="block text-sm font-medium theme-text mb-1">Nearest Branch</label>
+                    <select 
+                        id="nearest-branch" 
+                        class="input-field"
+                        disabled
+                    >
+                        <option value="">Select Bank and Pincode first</option>
+                    </select>
+                </div>
+
+                <!-- Bank Account Number -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label for="account-number" class="block text-sm font-medium theme-text mb-1">Bank Account Number</label>
+                    <input 
+                        type="text" 
+                        id="account-number" 
+                        class="input-field"
+                        placeholder="Enter account number"
+                        required
+                    >
+                </div>
+
+                <!-- Email -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label for="email" class="block text-sm font-medium theme-text mb-1">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        class="input-field"
+                        placeholder="Enter email address"
+                        required
+                    >
+                </div>
+
+                <!-- Date -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label for="date" class="block text-sm font-medium theme-text mb-1">Date</label>
+                    <input 
+                        type="date" 
+                        id="date" 
+                        class="input-field"
+                        required
+                    >
+                </div>
+
+                <!-- Time -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label for="time" class="block text-sm font-medium theme-text mb-1">Time</label>
+                    <input 
+                        type="time" 
+                        id="time" 
+                        class="input-field"
+                        required
+                    >
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-end mt-6">
+                    <button 
+                        type="reset" 
+                        class="mr-2 py-2 px-4 rounded-md border border-gray-300 hover:bg-gray-100 transition-colors"
+                    >
+                        Reset
+                    </button>
+                    <button 
+                        type="submit" 
+                        class="dropbox-blue text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+                    >
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer (Matches Home Page) -->
+    <footer class="bg-gray-100 py-6 px-4 sm:px-12">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8 text-sm text-gray-600">
+            <!-- Logo -->
+            <div>
+                <img src="Logo.png" alt="Bank Link Logo" class="h-24 mb-4 sm:mb-0">
+            </div>
+
+            <!-- Contact Info -->
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Contact Us:</p>
+                <a href="mailto:support@banklink.com" class="hover:underline">support@banklink.com</a>
+                <br>
+                <a href="tel:+91 80 1234 5678" class="hover:underline">+91 80 1234 5678</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Follow Us:</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="social-icon hover:text-blue-600" aria-label="Facebook">
+                        <i class="fab fa-facebook-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-blue-400" aria-label="Twitter">
+                        <i class="fab fa-twitter-square text-2lx"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-pink-500" aria-label="Instagram">
+                        <i class="fab fa-instagram-square text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <nav class="flex flex-col md:flex-row gap-2 md:gap-8">
+                <a href="terms.html" class="footer-link hover:underline">Terms</a>
+                <a href="privacy.html" class="footer-link hover:underline">Privacy</a>
+                <a href="help.html" class="footer-link hover:underline">Help</a>
+                <a href="faq.html" class="footer-link hover:underline">FAQ</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Mock bank branch data (replace with real API)
+        const bankBranches = {
+            SBI: {
+                '110001': ['Connaught Place', 'Janpath'],
+                '110002': ['Karol Bagh', 'Saket']
+            },
+            HDFC: {
+                '110001': ['CP', 'Pahar Ganj'],
+                '110002': ['Vasant Vihar', 'Malviya Nagar']
+            },
+            ICICI: {
+                '110001': ['Lajpat Nagar', 'Dwarka'],
+                '110002': ['Rohini', 'Ashok Vihar']
+            },
+            AXIS: {
+                '110001': ['Civil Lines', 'Karachi Bazar'],
+                '110002': ['Nehru Place', 'Kalkaji']
+            },
+            BOI: {
+                '110001': ['Minto Road', 'Chandni Chowk'],
+                '110002': ['Shadipur', 'Badarpur']
+            }
+        };
+
+        document.getElementById('bank-preference').addEventListener('change', updateBranches);
+        document.getElementById('pincode').addEventListener('input', updateBranches);
+
+        function updateBranches() {
+            const bank = document.getElementById('bank-preference').value;
+            const pincode = document.getElementById('pincode').value;
+            const branchSelect = document.getElementById('nearest-branch');
+
+            // Clear previous options
+            branchSelect.innerHTML = '<option value="">Loading...</option>';
+
+            // Simulate API call (replace with real data)
+            setTimeout(() => {
+                if (!bank || !pincode) {
+                    branchSelect.innerHTML = '<option value="">Select Bank and Pincode first</option>';
+                    branchSelect.disabled = true;
+                    return;
+                }
+
+                const branches = bankBranches[bank]?.[pincode] || [];
+                if (branches.length === 0) {
+                    branchSelect.innerHTML = '<option value="">No branches found</option>';
+                } else {
+                    branchSelect.innerHTML = branches.map(branch => `<option value="${branch}">${branch}</option>`).join('');
+                }
+
+                branchSelect.disabled = false;
+            }, 500); // Simulate network delay
+        }
+
+        // Form submission validation
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const bank = document.getElementById('bank-preference').value;
+            const pincode = document.getElementById('pincode').value;
+            const branch = document.getElementById('nearest-branch').value;
+
+            if (!bank || !pincode || !branch) {
+                alert('Please fill all required fields');
+                return;
+            }
+
+            alert('Appointment scheduled successfully!');
+        });
+    </script>
+</body>
+</html>

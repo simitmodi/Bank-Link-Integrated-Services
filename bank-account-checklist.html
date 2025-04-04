@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Creation Checklist - Bank Link</title>
+    <link rel="icon" href="Logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .theme-bg { background-color: #faf7ed; }
+        .theme-text { color: #0b1721; }
+        .century-gothic {
+            font-family: "Century Gothic", CenturyGothic, Avant Garde, sans-serif !important;
+        }
+        body {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 0h100v100H0z" fill="%23f5f5f5"/></svg>');
+            background-size: 400px;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .service-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .document-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 4rem; /* Add space before footer */
+        }
+        .document-item {
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ffffff, #f8f8f8);
+            box-shadow: 0 4px 6px -1px rgba(74, 81, 94, 0.1);
+        }
+        .document-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(74, 81, 94, 0.1);
+        }
+        .document-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        /* Button Styles - FIXED */
+        .appointment-button {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: #2a477e;
+            color: white;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(42, 71, 126, 0.3);
+            text-decoration: none;
+            margin: 2rem auto;
+        }
+        .appointment-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(42, 71, 126, 0.4);
+            background-color: #345394;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .button-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(42, 71, 126, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(42, 71, 126, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(42, 71, 126, 0); }
+        }
+        /* Custom Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        /* Footer Adjustments */
+        .footer-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .footer-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        .contact-info {
+            margin-left: 2rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .legal-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body class="theme-bg min-h-screen flex flex-col century-gothic">
+    <header class="py-8 px-4 sm:px-0">
+        <div class="max-w-xs mx-auto flex items-center justify-center sm:justify-start">
+            <img src="Logo.png" alt="Bank Link Integrated Services Logo" class="h-10">
+            <span class="ml-3 text-lg font-semibold theme-text">Bank Link Integrated Services</span>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-4">
+        <div class="main-container space-y-12 animate-fadeIn">
+            <div class="service-header">
+                <h1 class="text-4xl font-bold mb-4 theme-text">Bank Account Creation Checklist</h1>
+                <p class="text-xl text-gray-700 mb-8">
+                    Ensure you have these documents ready:
+                </p>
+            </div>
+
+            <!-- Document List -->
+            <div class="document-list">
+                <div class="document-item bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 transition-colors">
+                    <h2 class="document-title">ID Proof</h2>
+                    <p class="text-gray-700">
+                        Voter ID card / Aadhaar card / Passport / PAN card / Driving license
+                    </p>
+                </div>
+
+                <div class="document-item bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 transition-colors">
+                    <h2 class="document-title">Residential Proof</h2>
+                    <p class="text-gray-700">
+                        Voter ID card / Utility bills / Ration card / Aadhaar card / Passport / Driving license
+                    </p>
+                </div>
+
+                <div class="document-item bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 transition-colors">
+                    <h2 class="document-title">Account Opening Form</h2>
+                    <p class="text-gray-700">
+                        Print out of the account opening form when applying online. (It will be provided from the bank.)
+                    </p>
+                </div>
+
+                <div class="document-item bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 transition-colors">
+                    <h2 class="document-title">Photographs</h2>
+                    <p class="text-gray-700">
+                        Two recent passport-sized photographs
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Fixed Appointment Button - Now properly positioned -->
+            <div class="button-container">
+                <a href="appointment-scheduling.html" class="appointment-button button-pulse">
+                    <span class="mr-2">Book Appointment Slot</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-6 px-4 sm:px-12">
+        <div class="max-w-4xl mx-auto footer-section">
+            <!-- Logo -->
+            <div>
+                <img src="Logo.png" alt="Bank Link Logo" class="footer-logo">
+            </div>
+
+            <!-- Contact Info -->
+            <div class="hidden md:block contact-info">
+                <p class="theme-text mb-2">Contact Us:</p>
+                <a href="mailto:support@banklink.com" class="hover:underline">support@banklink.com</a>
+                <br>
+                <a href="tel:+91 80 1234 5678" class="hover:underline">+91 80 1234 5678</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="hidden md:block social-links">
+                <p class="theme-text mb-2">Follow Us:</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="social-icon hover:text-blue-600" aria-label="Facebook">
+                        <i class="fab fa-facebook-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-blue-400" aria-label="Twitter">
+                        <i class="fab fa-twitter-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-pink-500" aria-label="Instagram">
+                        <i class="fab fa-instagram-square text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <nav class="flex flex-col md:flex-row gap-2 md:gap-8 legal-links">
+                <a href="terms.html" class="footer-link hover:underline">Terms</a>
+                <a href="privacy.html" class="footer-link hover:underline">Privacy</a>
+                <a href="help.html" class="footer-link hover:underline">Help</a>
+                <a href="faq.html" class="footer-link hover:underline">FAQ</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Add loading animation on page load
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+            document.body.style.opacity = 1;
+            document.body.style.transition = 'opacity 0.5s ease';
+        }, 100);
+    </script>
+</body>
+</html>

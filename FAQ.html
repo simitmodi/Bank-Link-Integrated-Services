@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Bank Link Integrated Services</title>
+    <link rel="icon" href="Logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Theme Colors */
+        .theme-bg { background-color: #faf7ed; }
+        .theme-text { color: #0b1721; }
+        .century-gothic {
+            font-family: "Century Gothic", CenturyGothic, Avant Garde, sans-serif !important;
+        }
+        /* FAQ Styles */
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1.5rem 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        details summary {
+            list-style: none;
+            cursor: pointer;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary ~ * {
+            animation: sweep 0.3s ease-in-out;
+        }
+        @keyframes sweep {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="theme-bg min-h-screen flex flex-col century-gothic">
+    <header class="py-8 px-4 sm:px-0">
+        <div class="max-w-xs mx-auto flex items-center justify-center sm:justify-start">
+            <img src="Logo.png" alt="Bank Link Integrated Services Logo" class="h-10">
+            <span class="ml-3 text-lg font-semibold theme-text">Bank Link Integrated Services</span>
+        </div>
+    </header>
+
+    <main class="flex-grow px-4 sm:px-20 py-12">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-center mb-12 theme-text">Frequently Asked Questions</h1>
+
+            <!-- FAQ Items -->
+            <div class="space-y-6">
+                <!-- Question 1 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">1. How do I reset my password?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Visit the <a href="forgot-password.html" class="text-blue-600">Forgot Password</a> page and follow the instructions.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">2. Can I use emojis in my password?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Sadly, no. Our system only accepts letters, numbers, and standard symbols (e.g., !, @, #).
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">3. Is "Password123" a good password?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            No! Use a unique password with 12+ characters, including uppercase, lowercase, numbers, and symbols.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">4. Why is my cat walking on my keyboard?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            While we can’t explain cat behavior, we recommend securing your workspace during critical tasks. 😺
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">5. Can I sign up if I’m under 18?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            You must be at least 18 years old to create an account.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">6. Why is the login button blue?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            It’s part of our branding! The blue (#2a477e) represents trust and security.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">7. Can I delete my account?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Yes. Go to <strong>Account Settings</strong> and select "Delete Account." Note: This action is irreversible.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">8. Do you store my credit card info?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            No. We use secure third-party payment processors and never store full card details.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">9. What if I forget my birthdate?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Contact support with a government ID for verification.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">10. Is there a dark mode?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Not yet, but we’re considering it! For now, enjoy the calming #faf7ed background.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">11. Can I use my gaming chair as collateral?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Unfortunately, no. We only accept traditional collateral types.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">12. Why am I getting spam emails?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            We don’t send spam! Check if emails are from official @banklink.com addresses.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 13 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">13. Can I pay with cryptocurrency?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Not yet, but we’re exploring blockchain integration.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 14 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">14. What happens if I die?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Our <a href="terms.html" class="text-blue-600">Terms of Service</a> outline account inheritance policies.
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Question 15 -->
+                <div class="faq-item">
+                    <details>
+                        <summary class="flex justify-between items-center cursor-pointer">
+                            <h3 class="text-lg font-semibold theme-text">15. Can I use this on Mars?</h3>
+                            <i class="fas fa-chevron-down text-gray-500"></i>
+                        </summary>
+                        <div class="mt-3 text-gray-700">
+                            Our services are currently Earth-only. Martian internet not supported. 🌍
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Copied from home page) -->
+    <footer class="bg-gray-100 py-6 px-4 sm:px-12">
+        <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-8 text-sm text-gray-600">
+            <!-- Logo -->
+            <div>
+                <img src="Logo.png" alt="Bank Link Logo" class="h-24 mb-4 sm:mb-0">
+            </div>
+
+            <!-- Contact Info -->
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Contact Us:</p>
+                <a href="mailto:support@banklink.com" class="hover:underline">support@banklink.com</a>
+                <br>
+                <a href="tel:+91 80 1234 5678" class="hover:underline">+91 80 1234 5678</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="hidden md:block">
+                <p class="theme-text mb-2">Follow Us:</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="social-icon hover:text-blue-600" aria-label="Facebook">
+                        <i class="fab fa-facebook-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-blue-400" aria-label="Twitter">
+                        <i class="fab fa-twitter-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-pink-500" aria-label="Instagram">
+                        <i class="fab fa-instagram-square text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <nav class="flex flex-col md:flex-row gap-2 md:gap-8">
+                <a href="terms.html" class="footer-link hover:underline">Terms</a>
+                <a href="privacy.html" class="footer-link hover:underline">Privacy</a>
+                <a href="help.html" class="footer-link hover:underline">Help</a>
+                <a href="faq.html" class="footer-link hover:underline">FAQ</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Selection - Bank Link</title>
+    <link rel="icon" href="Logo.png" type="image/x-icon">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .theme-bg { background-color: #faf7ed; }
+        .theme-text { color: #0b1721; }
+        .century-gothic {
+            font-family: "Century Gothic", CenturyGothic, Avant Garde, sans-serif !important;
+        }
+        .service-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(74, 81, 94, 0.1);
+        }
+        .service-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        body {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M0 0h100v100H0z" fill="%23f5f5f5"/></svg>');
+            background-size: 400px;
+        }
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        .footer-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+        }
+        .footer-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+        .contact-info {
+            margin-left: 2rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .legal-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body class="theme-bg min-h-screen flex flex-col century-gothic">
+    <header class="py-8 px-4 sm:px-0">
+        <div class="max-w-xs mx-auto flex items-center justify-center sm:justify-start">
+            <img src="Logo.png" alt="Bank Link Integrated Services Logo" class="h-10">
+            <span class="ml-3 text-lg font-semibold theme-text">Bank Link Integrated Services</span>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center px-4">
+        <div class="main-container space-y-12">
+            <div class="service-header">
+                <h1 class="text-4xl font-bold mb-4 theme-text">Choose Your Service</h1>
+                <p class="text-xl text-gray-700 mb-8">
+                    Select the service you need assistance with:
+                </p>
+            </div>
+
+            <!-- 2x2 Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="LoanDocumentList.html" class="service-card hover:bg-gray-100 transition-colors">
+                    <h2 class="service-title">Loan Application</h2>
+                    <p class="text-gray-700">Apply for personal, home, or business loans.</p>
+                </a>
+
+                <a href="bank-account-checklist.html" class="service-card hover:bg-gray-100 transition-colors">
+                    <h2 class="service-title">Create an Account</h2>
+                    <p class="text-gray-700">Open a savings, current, or fixed deposit account.</p>
+                </a>
+
+                <a href="address-change-checklist.html" class="service-card hover:bg-gray-100 transition-colors">
+                    <h2 class="service-title">Address Change</h2>
+                    <p class="text-gray-700">Update your registered address details.</p>
+                </a>
+
+                <a href="name-change-checklist.html" class="service-card hover:bg-gray-100 transition-colors">
+                    <h2 class="service-title">Name Change</h2>
+                    <p class="text-gray-700">Modify your name on bank records.</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-6 px-4 sm:px-12">
+        <div class="max-w-4xl mx-auto footer-section">
+            <!-- Logo -->
+            <div>
+                <img src="Logo.png" alt="Bank Link Logo" class="footer-logo">
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <p class="theme-text mb-2">Contact Us:</p>
+                <a href="mailto:support@banklink.com" class="hover:underline">support@banklink.com</a>
+                <br>
+                <a href="tel:+91 80 1234 5678" class="hover:underline">+91 80 1234 5678</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="social-links">
+                <p class="theme-text mb-2">Follow Us:</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="social-icon hover:text-blue-600" aria-label="Facebook">
+                        <i class="fab fa-facebook-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-blue-400" aria-label="Twitter">
+                        <i class="fab fa-twitter-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="social-icon hover:text-pink-500" aria-label="Instagram">
+                        <i class="fab fa-instagram-square text-2lx"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Legal Links -->
+            <nav class="legal-links">
+                <a href="terms.html" class="footer-link hover:underline">Terms</a>
+                <a href="privacy.html" class="footer-link hover:underline">Privacy</a>
+                <a href="help.html" class="footer-link hover:underline">Help</a>
+                <a href="faq.html" class="footer-link hover:underline">FAQ</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>
