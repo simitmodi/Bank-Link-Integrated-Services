@@ -1,72 +1,63 @@
 # Bank-Link Integrated Services
 
-A user-friendly, front-end portal designed to streamline banking interactions—offering checklists, document requirements, digital forms, and support resources for account changes, loan applications, appointments, and related banking services.
+A practical front-end portal (static HTML/CSS/JS) to streamline common banking workflows—offering ready-to-use checklists, application steps, and essential banking resources for customers and staff.
 
 ---
 
 ## 🏦 About
 
-**Bank-Link Integrated Services** simplifies personal and business banking tasks through clear, accessible web forms and documentation. The platform provides direct access to essential banking workflows, helping users prepare and manage everything from opening new accounts to loan applications, address/name changes, and appointment scheduling—all from a single portal.
+**Bank-Link Integrated Services** provides organized, user-friendly web pages for everyday banking activities. The project includes checklists for documents, guides for address/name updates, loan requirements, appointment forms, and customer support—all in a simple, accessible format.
 
 ---
 
 ## 🚀 Getting Started
 
 **Requirements:**
-- Modern web browser (Chrome, Edge, Firefox, Safari, etc.)
-- No backend: Static HTML/JS/CSS only—host on any web server, or open directly
+- Any modern web browser (Chrome, Firefox, Edge, Safari, etc.)
+- No server or backend needed.
 
-**Quick Start:**
-1. Clone or download the repository, or visit the live site:  
-   `https://bank-link-integrated-services.vercel.app`
-2. Open the desired `.html` file in your browser (e.g., `home.html`).
+**How to Use:**
+1. Download or clone this repository to your computer:
+git clone https://github.com/simitmodi/Bank-Link-Integrated-Services.git
+2. Open any `.html` file (e.g., `home.html`) in your browser to begin exploring.
 
 ---
 
-## 📂 Folder & File Structure
+## 📂 File List
 
-All functionality is available via standalone HTML files. Here are key files:
+- `home.html` — Main homepage of the portal
+- `login.html` / `Signup.html` / `forgot-password.html` — User authentication (front-end only)
+- `FAQ.html` / `help.html` — Customer support and self-help
+- **Banking Checklists & Workflows:**
+- `bank-account-checklist.html`
+- `address-change-checklist.html`
+- `name-change-checklist.html`
+- `document-checklist.html`
+- `LoanDocumentList.html`
+- `appointment-scheduling.html` — Form for booking appointments
+- `privacy.html` / `terms.html` — Policies and disclosures
+- `Logo.png`, `Untitled-1.psd` — Branding/logo assets
+- `README.md` — Project overview and instructions
 
-- `home.html`: Main landing page
-- `login.html` / `signup.html`: User authentication
-- `forgot-password.html`: Password recovery
-- `FAQ.html`, `help.html`: Customer support and self-help
-- **Checklists:**
-  - `bank-account-checklist.html`: What you need to open an account
-  - `address-change-checklist.html`: Steps to update your address with your bank
-  - `name-change-checklist.html`: Steps to update your name on bank records
-  - `document-checklist.html`, `LoanDocumentList.html`: Required documentation for common tasks
-- `appointment-scheduling.html`: Schedule banking appointments
-- `privacy.html` / `terms.html`: Policies and disclosures
-- `Logo.png`, `Untitled-1.psd`: Branding assets
-
-> *No backend or database required. All forms and pages are HTML-based front-end resources for reference or internal use.*
+> All files are independent front-end resources for demos, learning, prototyping, or reference.
 
 ---
 
 ## ✨ Features
 
-- **Unified Banking Workflows:** All checklists & forms in one place
-- **Self-service Support:** FAQs, help guides, privacy & terms
-- **Modular Design:** Pages can be reused/linked to any banking system
-- **Simple Deployment:** Just upload to any static hosting service (Vercel, Netlify, GitHub Pages, etc.)
-- **Accessible:** Clean and modern UI/UX
+- **Checklists & Guidance** for core banking services
+- **Self-service Help:** FAQ, help pages, privacy & terms
+- **Ready for Demo/Adaptation:** Use as reference or embed in larger apps
+- **No Dependencies**—open and use instantly
 
 ---
 
 ## 🔍 Use Cases
 
-- Customers preparing documents for bank visits
-- Employees guiding clients through banking tasks
-- New account/loan/appointment setups
-- Reference material for back-office/support teams
-
----
-
-## 🤝 Contributing
-
-Contributions and improvements are welcome!  
-Fork, branch, and submit a Pull Request with changes or new features.
+- Customers: Check documents needed before a bank visit
+- Bank staff: Guide customers through applications
+- Students: Learn about common banking workflows
+- Prototyping: Quick reference for banking web-app development
 
 ---
 
@@ -80,4 +71,4 @@ Location: Ahmedabad, Gujarat
 
 ---
 
-*This project demonstrates streamlined banking interactions and document readiness, built with simplicity and user experience in mind.*
+*This repository demonstrates simplified banking flows and requirements—all in quick-access static pages, ready for practical use, learning, or demonstration.*
